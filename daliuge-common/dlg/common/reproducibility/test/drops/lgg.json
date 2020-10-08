@@ -1,0 +1,115 @@
+{
+  "lgt": {
+    "canHaveInputs": true,
+    "canHaveOutputs": true,
+    "category": "Scatter",
+    "categoryType": "Group",
+    "collapsed": false,
+    "colour": "#DDAD00",
+    "description": "Placeholder 'scatter' description",
+    "desiredSize": {
+      "height": 200,
+      "width": 200
+    },
+    "exitAppName": "",
+    "fields": [
+      {
+        "name": "num_of_copies",
+        "text": "Number of copies",
+        "value": "4"
+      },
+      {
+        "name": "scatter_axis",
+        "text": "Scatter axis",
+        "value": "time"
+      }
+    ],
+    "inputAppFields": [],
+    "inputAppName": "",
+    "inputApplication": "Unknown",
+    "inputLocalPorts": [
+      {
+        "Id": "88f46618-57ac-4e9c-99a7-f9cf2d682852",
+        "IdText": "event"
+      }
+    ],
+    "inputPorts": [
+      {
+        "Id": "b8cc69ef-de0c-4c6a-bba2-df12aff17a8b",
+        "IdText": "event"
+      }
+    ],
+    "isData": false,
+    "isGroup": true,
+    "key": -3,
+    "loc": "300 100",
+    "outputAppFields": [],
+    "outputAppName": "",
+    "outputApplication": "",
+    "outputLocalPorts": [
+      {
+        "Id": "c29554bd-8003-410a-9cce-c0d4376bb1ef",
+        "IdText": "event"
+      }
+    ],
+    "outputPorts": [
+      {
+        "Id": "a8e147cb-065c-49ee-8c52-25c53cf36a07",
+        "IdText": "event"
+      }
+    ],
+    "streaming": false,
+    "subject": null,
+    "text": "Scatter"
+  },
+  "lgt_rr": {
+    "category": "Scatter",
+    "category_type": "Group",
+    "numInputPorts": 1,
+    "numOutputPorts": 1,
+    "streaming": false
+  },
+  "lgt_rt": {
+    "category": "Scatter",
+    "category_type": "Group",
+    "numInputPorts": 1,
+    "numOutputPorts": 1,
+    "streaming": false
+  },
+  "lgt_rp": {
+    "category": "Scatter",
+    "category_type": "Group"
+  },
+  "lgt_rpl_sci": {
+    "category": "Scatter",
+    "category_type": "Group",
+    "numInputPorts": 1,
+    "numOutputPorts": 1,
+    "streaming": false
+  },
+  "lgt_rpl_comp": {
+    "category": "Scatter",
+    "category_type": "Group",
+    "numInputPorts": 1,
+    "numOutputPorts": 1,
+    "streaming": false
+  },
+  "lg": {},
+  "lg_rr": {},
+  "lg_rt": {},
+  "lg_rp": {},
+  "lg_rpl_sci": {},
+  "lg_rpl_comp": {},
+  "pgt": {},
+  "pgt_rr": {},
+  "pgt_rt": {},
+  "pgt_rp": {},
+  "pgt_rpl_sci": {},
+  "pgt_rpl_comp": {},
+  "pg": {},
+  "pg_rr": {},
+  "pg_rt": {},
+  "pg_rp": {},
+  "pg_rpl_sci": {},
+  "pg_rpl_comp": {}
+}

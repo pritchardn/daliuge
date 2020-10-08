@@ -1,0 +1,112 @@
+{
+  "lgt": {
+    "canHaveInputs": true,
+    "canHaveOutputs": true,
+    "category": "File",
+    "categoryType": "Data",
+    "collapsed": false,
+    "colour": "#394BB2",
+    "description": "",
+    "drawOrderHint": 0,
+    "exitAppName": "",
+    "fields": [
+      {
+        "name": "data_volume",
+        "text": "Data volume",
+        "value": "5"
+      },
+      {
+        "name": "group_end",
+        "text": "Group end",
+        "value": "0"
+      },
+      {
+        "name": "check_filepath_exists",
+        "text": "Check file path exists",
+        "value": "1"
+      },
+      {
+        "name": "filepath",
+        "text": "File path",
+        "value": "result1.out"
+      },
+      {
+        "name": "dirname",
+        "text": "Directory name",
+        "value": "/home/data"
+      }
+    ],
+    "inputAppFields": [],
+    "inputAppName": "",
+    "inputApplication": "Unknown",
+    "inputLocalPorts": [],
+    "inputPorts": [
+      {
+        "Id": "2i1",
+        "IdText": "event"
+      }
+    ],
+    "isData": true,
+    "isGroup": false,
+    "key": -2,
+    "loc": "814 477",
+    "outputAppFields": [],
+    "outputAppName": "",
+    "outputApplication": "Unknown",
+    "outputLocalPorts": [],
+    "outputPorts": [],
+    "streaming": false,
+    "subject": null,
+    "text": "File"
+  },
+  "lgt_rr": {
+    "category_type": "Data",
+    "category": "File",
+    "numInputPorts": 1,
+    "numOutputPorts": 0,
+    "streaming": false
+  },
+  "lgt_rt": {
+    "category_type": "Data",
+    "category": "File",
+    "numInputPorts": 1,
+    "numOutputPorts": 0,
+    "streaming": false
+  },
+  "lgt_rp": {
+    "category_type": "Data",
+    "category": "File"
+  },
+  "lgt_rpl_sci": {
+    "category_type": "Data",
+    "category": "File",
+    "numInputPorts": 1,
+    "numOutputPorts": 0,
+    "streaming": false
+  },
+  "lgt_rpl_comp": {
+    "category_type": "Data",
+    "category": "File",
+    "numInputPorts": 1,
+    "numOutputPorts": 0,
+    "streaming": false
+  },
+  "lg": {},
+  "lg_rr": {},
+  "lg_rt": {},
+  "lg_rp": {},
+  "lg_rpl_sci": {},
+  "lg_rpl_comp": {},
+  "pgt": {},
+  "pgt_rr": {},
+  "pgt_rt": {},
+  "pgt_rp": {},
+  "pgt_rpl_sci": {},
+  "pgt_rpl_comp": {},
+  "pg": {},
+  "pg_rr": {},
+  "pg_rt": {},
+  "pg_rp": {},
+  "pg_rpl_sci": {},
+  "pg_rpl_comp": {}
+}
