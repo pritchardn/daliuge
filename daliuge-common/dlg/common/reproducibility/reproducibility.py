@@ -411,7 +411,7 @@ def build_blockdag(drops: list, abstraction: str = 'pgt'):
     Processes drops in-order.
     O(V + E) time complexity.
     :param drops: The list of drops
-    :param abstraction: The level of graph abstraction 'pgt' || 'pg'
+    :param abstraction: The level of graph abstraction 'pgt' || 'pg' || 'rg'
     :return:
     """
     blockstr = 'pgt'
