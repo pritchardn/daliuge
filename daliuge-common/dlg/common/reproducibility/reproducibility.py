@@ -64,7 +64,7 @@ def accumulate_lg_drop_data(drop: dict, level: ReproducibilityFlags):
 
     if not rmode_supported(level):
         raise NotImplementedError("Reproducibility level %s not yet supported" % level.name)
-    if level == ReproducibilityFlags.RERUN:
+    if level == ReproducibilityFlags.RERUN or level == ReproducibilityFlags.REPLICATE_SCI:
         pass
     elif level == ReproducibilityFlags.REPEAT or level == ReproducibilityFlags.REPLICATE_COMP:
         if category_type == 'Application':
@@ -78,7 +78,7 @@ def accumulate_lg_drop_data(drop: dict, level: ReproducibilityFlags):
                 data['num_of_procs'] = fields['num_of_procs']
             elif category == Categories.DOCKER:
                 data['image'] = fields['image']
-                data['command'] = fields['commnad']
+                data['command'] = fields['command']
                 data['user'] = fields['user']
                 data['ensureUserAndSwitch'] = fields['ensureUserAndSwitch']
                 data['removeContainer'] = fields['removeContainer']
