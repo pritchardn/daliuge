@@ -417,7 +417,8 @@ def convert_construct(lgo):
         app_node["key"] = node["key"]
         app_node["category"] = node[has_app]  # node['application']
         app_node["text"] = node["text"]
-
+        app_node["reprodata"] = {"rmode": node["reprodata"]["rmode"],  # Default behaviour to inherit rmode
+                                 "lg_blockhash": node["reprodata"]["lg_blockhash"]}
         if 'mkn' in node:
             app_node['mkn'] = node['mkn']
 

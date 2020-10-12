@@ -64,20 +64,19 @@ import networkx as nx
 import numpy as np
 import six
 
-from .scheduler import MySarkarScheduler, DAGUtil, MinNumPartsScheduler, PSOScheduler
-from .utils.bash_parameter import BashCommand
-from ..common import dropdict
-from ..common import Categories
-from ..common import STORAGE_TYPES, APP_DROP_TYPES
 from .dm_utils import (
     get_lg_ver_type,
     convert_construct,
     convert_fields,
     convert_mkn,
     LG_VER_EAGLE,
-    LG_VER_OLD,
     LG_VER_EAGLE_CONVERTED,
 )
+from .scheduler import MySarkarScheduler, DAGUtil, MinNumPartsScheduler, PSOScheduler
+from .utils.bash_parameter import BashCommand
+from ..common import Categories
+from ..common import STORAGE_TYPES, APP_DROP_TYPES
+from ..common import dropdict
 
 logger = logging.getLogger(__name__)
 
@@ -128,6 +127,7 @@ class LGNode:
         if "isGroup" in jd and jd["isGroup"] is True:
             self._isgrp = True
             for wn in group_q[self.id]:
+                print(wn._reprodata)
                 wn.group = self
                 self.add_child(wn)
             group_q.pop(self.id)  # not thread safe
@@ -604,7 +604,7 @@ class LGNode:
                 if fp:
                     kwargs["filepath"] = fp
         elif (
-            drop_type == Categories.COMPONENT
+            drop_type == Categories.COMPONENT or drop_type == 'PythonApp'  # TODO: Alert this is an EAGLE or dm_util bug
         ):  # default generic component becomes "sleep and copy"
             if "appclass" not in self.jd or len(self.jd["appclass"]) == 0:
                 app_class = "dlg.apps.simple.SleepApp"
