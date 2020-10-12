@@ -144,7 +144,7 @@ def accumulate_pgt_unroll_drop_data(drop: dict):
         if data['type'] == 'plain':
             data['storage'] = drop['storage']
         else:
-            data['dt'] = drop['dt']  # WARNING: Added to differentiate between subtle component differences.
+            data['app'] = drop['app']  # WARNING: Added to differentiate between subtle component differences.
 
     return data
 
