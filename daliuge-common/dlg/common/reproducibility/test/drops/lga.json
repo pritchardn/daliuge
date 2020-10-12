@@ -1,104 +1,249 @@
 {
-	"lgt": {"canHaveInputs": true,
-            "canHaveOutputs": true,
-            "category": "BashShellApp",
-            "categoryType": "Application",
-            "collapsed": false,
-            "colour": "#1C2833",
-            "description": "An application component run within the Bash Shell",
-            "drawOrderHint": 0,
-            "exitAppName": "",
-            "fields": [
-                {
-                    "name": "execution_time",
-                    "text": "Execution time",
-                    "value": "5"
-                },
-                {
-                    "name": "num_cpus",
-                    "text": "Num CPUs",
-                    "value": "1"
-                },
-                {
-                    "name": "group_start",
-                    "text": "Group start",
-                    "value": "0"
-                },
-                {
-                    "name": "Arg01",
-                    "text": "Arg01",
-                    "value": "echo -en 'Hello world' > %o0"
-                }
-            ],
-            "inputAppFields": [],
-            "inputAppName": "",
-            "inputApplication": "Unknown",
-            "inputLocalPorts": [],
-            "inputPorts": [],
-            "isData": false,
-            "isGroup": false,
-            "key": -3,
-            "loc": "222 343",
-            "outputAppFields": [],
-            "outputAppName": "",
-            "outputApplication": "Unknown",
-            "outputLocalPorts": [],
-            "outputPorts": [
-                {
-                    "Id": "3o1",
-                    "IdText": "event"
-                }
-            ],
-            "streaming": true,
-            "subject": null,
-            "text": "Bash Shell App"},
-	"lgt_rr": {
-      "category_type": "Application",
-      "category": "BashShellApp",
-      "numInputPorts": 0,
-      "numOutputPorts": 1,
-      "streaming": true},
-	"lgt_rt": {
-      "category_type": "Application",
-      "category": "BashShellApp",
-      "numInputPorts": 0,
-      "numOutputPorts": 1,
-      "streaming": true
-    },
-	"lgt_rp": {
-      "category_type": "Application",
-      "category": "BashShellApp"
-    },
-	"lgt_rpl_sci": {
-      "category_type": "Application",
-      "category": "BashShellApp",
-      "numInputPorts": 0,
-      "numOutputPorts": 1,
-      "streaming": true
-    },
-	"lgt_rpl_comp": {
-      "category_type": "Application",
-      "category": "BashShellApp",
-      "numInputPorts": 0,
-      "numOutputPorts": 1,
-      "streaming": true
-    },
-	"lg": {},
-	"lg_rr": {},
-	"lg_rt": {},
-	"lg_rp": {},
-	"lg_rpl_sci": {},
-	"lg_rpl_comp": {},
-	"pgt": {},
-	"pgt_rr": {},
-	"pgt_rt": {},
-	"pgt_rp": {},
-	"pgt_rpl_sci": {},
-	"pgt_rpl_comp": {},
-	"pg": {},
-	"pg_rr": {},
-	"pg_rt": {},
-	"pg_rp": {},
-	"pg_rpl_sci": {},
-	"pg_rpl_comp": {}
+  "lgt": {
+    "canHaveInputs": true,
+    "canHaveOutputs": true,
+    "category": "BashShellApp",
+    "categoryType": "Application",
+    "collapsed": false,
+    "colour": "#1C2833",
+    "description": "An application component run within the Bash Shell",
+    "drawOrderHint": 0,
+    "exitAppName": "",
+    "fields": [
+      {
+        "name": "execution_time",
+        "text": "Execution time",
+        "value": "5"
+      },
+      {
+        "name": "num_cpus",
+        "text": "Num CPUs",
+        "value": "1"
+      },
+      {
+        "name": "group_start",
+        "text": "Group start",
+        "value": "0"
+      },
+      {
+        "name": "Arg01",
+        "text": "Arg01",
+        "value": "echo -en 'Hello world' > %o0"
+      }
+    ],
+    "inputAppFields": [],
+    "inputAppName": "",
+    "inputApplication": "Unknown",
+    "inputLocalPorts": [],
+    "inputPorts": [],
+    "isData": false,
+    "isGroup": false,
+    "key": -3,
+    "loc": "222 343",
+    "outputAppFields": [],
+    "outputAppName": "",
+    "outputApplication": "Unknown",
+    "outputLocalPorts": [],
+    "outputPorts": [
+      {
+        "Id": "3o1",
+        "IdText": "event"
+      }
+    ],
+    "streaming": true,
+    "subject": null,
+    "text": "Bash Shell App"
+  },
+  "lgt_rr": {
+    "category_type": "Application",
+    "category": "BashShellApp",
+    "numInputPorts": 0,
+    "numOutputPorts": 1,
+    "streaming": true
+  },
+  "lgt_rt": {
+    "category_type": "Application",
+    "category": "BashShellApp",
+    "numInputPorts": 0,
+    "numOutputPorts": 1,
+    "streaming": true
+  },
+  "lgt_rp": {
+    "category_type": "Application",
+    "category": "BashShellApp"
+  },
+  "lgt_rpl_sci": {
+    "category_type": "Application",
+    "category": "BashShellApp",
+    "numInputPorts": 0,
+    "numOutputPorts": 1,
+    "streaming": true
+  },
+  "lgt_rpl_comp": {
+    "category_type": "Application",
+    "category": "BashShellApp",
+    "numInputPorts": 0,
+    "numOutputPorts": 1,
+    "streaming": true
+  },
+  "lg": {
+    "canHaveInputs": true,
+    "canHaveOutputs": true,
+    "category": "BashShellApp",
+    "categoryType": "Application",
+    "collapsed": false,
+    "colour": "#1C2833",
+    "description": "An application component run within the Bash Shell",
+    "drawOrderHint": 0,
+    "exitAppName": "",
+    "fields": [
+      {
+        "name": "execution_time",
+        "text": "Execution time",
+        "value": "5"
+      },
+      {
+        "name": "num_cpus",
+        "text": "Num CPUs",
+        "value": "1"
+      },
+      {
+        "name": "group_start",
+        "text": "Group start",
+        "value": "0"
+      },
+      {
+        "name": "Arg01",
+        "text": "Arg01",
+        "value": "echo -en 'Hello world' > %o0"
+      }
+    ],
+    "inputAppFields": [],
+    "inputAppName": "",
+    "inputApplication": "Unknown",
+    "inputLocalPorts": [],
+    "inputPorts": [],
+    "isData": false,
+    "isGroup": false,
+    "key": -3,
+    "loc": "222 343",
+    "outputAppFields": [],
+    "outputAppName": "",
+    "outputApplication": "Unknown",
+    "outputLocalPorts": [],
+    "outputPorts": [
+      {
+        "Id": "3o1",
+        "IdText": "event"
+      }
+    ],
+    "streaming": true,
+    "subject": null,
+    "text": "Bash Shell App"
+  },
+  "lg_rr": {},
+  "lg_rt": {
+    "execution_time": "5",
+    "num_cpus": "1",
+    "command": "echo -en 'Hello world' > %o0"
+  },
+  "lg_rp": {},
+  "lg_rpl_sci": {},
+  "lg_rpl_comp": {
+    "execution_time": "5",
+    "num_cpus": "1",
+    "command": "echo -en 'Hello world' > %o0"
+  },
+  "pgt": {
+    "oid": "1_-1_0",
+    "type": "app",
+    "app": "dlg.apps.bash_shell_app.BashShellApp",
+    "rank": [
+      0
+    ],
+    "loop_cxt": null,
+    "tw": 5,
+    "command": "echo -en 'Hello world' > %o0",
+    "num_cpus": 1,
+    "iid": "0",
+    "lg_key": -1,
+    "dt": "BashShellApp",
+    "nm": "HelloWorld",
+    "node": "#0",
+    "island": "#0",
+    "reprodata": {
+      "rmode": "2"
+    }
+  },
+  "pgt_rr": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp"
+  },
+  "pgt_rt": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp",
+    "node": "0",
+    "island": "0"
+  },
+  "pgt_rp": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp"
+  },
+  "pgt_rpl_sci": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp"
+  },
+  "pgt_rpl_comp": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp",
+    "node": "0",
+    "island": "0"
+  },
+  "pg": {
+    "oid": "1_-1_0",
+    "type": "app",
+    "app": "dlg.apps.bash_shell_app.BashShellApp",
+    "rank": [
+      0
+    ],
+    "loop_cxt": null,
+    "tw": 5,
+    "command": "echo Hello World",
+    "num_cpus": 1,
+    "iid": "0",
+    "lg_key": -1,
+    "dt": "BashShellApp",
+    "nm": "HelloWorld",
+    "node": "127.0.0.1",
+    "island": "127.0.0.1",
+    "reprodata": {
+      "rmode": "2"
+    }
+  },
+  "pg_rr": {},
+  "pg_rt": {
+    "node": "127.0.0.1",
+    "island": "127.0.0.1"
+  },
+  "pg_rp": {},
+  "pg_rpl_sci": {},
+  "pg_rpl_comp": {
+    "node": "127.0.0.1",
+    "island": "127.0.0.1"
+  }
 }
