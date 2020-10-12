@@ -211,7 +211,9 @@
     "rank": [
       0
     ],
-    "storage": "File"
+    "storage": "File",
+    "island": "0",
+    "node": "0"
   },
   "pgt_rp": {
     "type": "plain",
@@ -232,7 +234,9 @@
     "rank": [
       0
     ],
-    "storage": "File"
+    "storage": "File",
+    "island": "0",
+    "node": "0"
   },
   "pg": {
     "oid": "1_-1_0",

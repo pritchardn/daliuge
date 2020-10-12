@@ -5,69 +5,102 @@
     "category": "Scatter",
     "categoryType": "Group",
     "collapsed": false,
-    "colour": "#DDAD00",
+    "color": "#DDAD00",
     "description": "Placeholder 'scatter' description",
-    "desiredSize": {
-      "height": 200,
-      "width": 200
-    },
-    "exitAppName": "",
+    "drawOrderHint": 0,
+    "exitApplicationName": "",
+    "exitApplicationType": "None",
+    "expanded": true,
     "fields": [
       {
+        "description": "",
         "name": "num_of_copies",
         "text": "Number of copies",
         "value": "4"
       },
       {
+        "description": "",
         "name": "scatter_axis",
         "text": "Scatter axis",
         "value": "time"
       }
     ],
-    "inputAppFields": [],
-    "inputAppName": "",
-    "inputApplication": "Unknown",
+    "height": 529,
+    "inputAppFields": [
+      {
+        "description": "",
+        "name": "execution_time",
+        "text": "Execution time",
+        "value": "5"
+      },
+      {
+        "description": "",
+        "name": "num_cpus",
+        "text": "Num CPUs",
+        "value": "1"
+      },
+      {
+        "description": "",
+        "name": "group_start",
+        "text": "Group start",
+        "value": "0"
+      },
+      {
+        "description": "The command line to be executed",
+        "name": "Arg01",
+        "text": "Arg01",
+        "value": "sleep 1"
+      }
+    ],
+    "inputApplicationName": "Sleep",
+    "inputApplicationType": "BashShellApp",
     "inputLocalPorts": [
       {
-        "Id": "88f46618-57ac-4e9c-99a7-f9cf2d682852",
+        "Id": "f8470d9d-f627-4f98-885c-d97023e6b214",
         "IdText": "event"
       }
     ],
     "inputPorts": [
       {
-        "Id": "b8cc69ef-de0c-4c6a-bba2-df12aff17a8b",
+        "Id": "c7d0c4ba-40d4-49f5-a9e2-71d44fd4f5a1",
         "IdText": "event"
       }
     ],
     "isData": false,
     "isGroup": true,
     "key": -3,
-    "loc": "300 100",
     "outputAppFields": [],
-    "outputAppName": "",
-    "outputApplication": "",
+    "outputApplicationName": "",
+    "outputApplicationType": "None",
     "outputLocalPorts": [
       {
-        "Id": "c29554bd-8003-410a-9cce-c0d4376bb1ef",
+        "Id": "ddf13b62-352a-4169-be61-315f96680df2",
         "IdText": "event"
       }
     ],
     "outputPorts": [
       {
-        "Id": "a8e147cb-065c-49ee-8c52-25c53cf36a07",
+        "Id": "4be75b74-1c30-48dd-9047-3bcefac111c8",
         "IdText": "event"
       }
     ],
+    "selected": false,
+    "showPorts": false,
     "streaming": false,
     "subject": null,
-    "text": "Scatter"
+    "text": "Scatter",
+    "width": 673,
+    "x": 520,
+    "y": 199
   },
   "lgt_rr": {
-    "category": "Scatter",
     "category_type": "Group",
+    "category": "Scatter",
     "numInputPorts": 1,
     "numOutputPorts": 1,
     "streaming": false
+  },
+  "lg_rr": {
   },
   "lgt_rt": {
     "category": "Scatter",
@@ -94,22 +127,220 @@
     "numOutputPorts": 1,
     "streaming": false
   },
-  "lg": {},
-  "lg_rr": {},
-  "lg_rt": {},
+  "lg": {
+    "canHaveInputs": true,
+    "canHaveOutputs": true,
+    "category": "Scatter",
+    "categoryType": "Group",
+    "collapsed": false,
+    "color": "#DDAD00",
+    "description": "Placeholder 'scatter' description",
+    "drawOrderHint": 0,
+    "exitApplicationName": "",
+    "exitApplicationType": "None",
+    "expanded": true,
+    "fields": [
+      {
+        "description": "",
+        "name": "num_of_copies",
+        "text": "Number of copies",
+        "value": "4"
+      },
+      {
+        "description": "",
+        "name": "scatter_axis",
+        "text": "Scatter axis",
+        "value": "time"
+      }
+    ],
+    "height": 529,
+    "inputAppFields": [
+      {
+        "description": "",
+        "name": "execution_time",
+        "text": "Execution time",
+        "value": "5"
+      },
+      {
+        "description": "",
+        "name": "num_cpus",
+        "text": "Num CPUs",
+        "value": "1"
+      },
+      {
+        "description": "",
+        "name": "group_start",
+        "text": "Group start",
+        "value": "0"
+      },
+      {
+        "description": "The command line to be executed",
+        "name": "Arg01",
+        "text": "Arg01",
+        "value": "sleep 1"
+      }
+    ],
+    "inputApplicationName": "Sleep",
+    "inputApplicationType": "BashShellApp",
+    "inputLocalPorts": [
+      {
+        "Id": "f8470d9d-f627-4f98-885c-d97023e6b214",
+        "IdText": "event"
+      }
+    ],
+    "inputPorts": [
+      {
+        "Id": "c7d0c4ba-40d4-49f5-a9e2-71d44fd4f5a1",
+        "IdText": "event"
+      }
+    ],
+    "isData": false,
+    "isGroup": true,
+    "key": -3,
+    "outputAppFields": [],
+    "outputApplicationName": "",
+    "outputApplicationType": "None",
+    "outputLocalPorts": [
+      {
+        "Id": "ddf13b62-352a-4169-be61-315f96680df2",
+        "IdText": "event"
+      }
+    ],
+    "outputPorts": [
+      {
+        "Id": "4be75b74-1c30-48dd-9047-3bcefac111c8",
+        "IdText": "event"
+      }
+    ],
+    "selected": false,
+    "showPorts": false,
+    "streaming": false,
+    "subject": null,
+    "text": "Scatter",
+    "width": 673,
+    "x": 520,
+    "y": 199
+  },
+  "lg_rt": {
+    "num_of_copies": "4",
+    "scatter_axis": "time"
+  },
   "lg_rp": {},
   "lg_rpl_sci": {},
-  "lg_rpl_comp": {},
-  "pgt": {},
-  "pgt_rr": {},
-  "pgt_rt": {},
-  "pgt_rp": {},
-  "pgt_rpl_sci": {},
-  "pgt_rpl_comp": {},
-  "pg": {},
+  "lg_rpl_comp": {
+    "num_of_copies": "4",
+    "scatter_axis": "time"
+  },
+  "pgt": {
+    "oid": "1_-3_0",
+    "type": "app",
+    "app": "dlg.apps.bash_shell_app.BashShellApp",
+    "rank": [
+      0
+    ],
+    "loop_cxt": null,
+    "tw": 5,
+    "command": "sleep 1",
+    "num_cpus": 1,
+    "iid": "0",
+    "lg_key": -3,
+    "dt": "BashShellApp",
+    "nm": "Scatter",
+    "original": true,
+    "inputs": [
+      "1_-1_0"
+    ],
+    "outputs": [
+      "1_-4_0/0",
+      "1_-4_0/1",
+      "1_-4_0/2",
+      "1_-4_0/3"
+    ],
+    "node": "#0",
+    "island": "#0",
+    "reprodata": {
+      "rmode": "1"
+    }
+  },
+  "pgt_rr": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp"
+  },
+  "pgt_rt": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp",
+    "node": "0",
+    "island": "0"
+  },
+  "pgt_rp": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp"
+  },
+  "pgt_rpl_sci": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp"
+  },
+  "pgt_rpl_comp": {
+    "type": "app",
+    "rank": [
+      0
+    ],
+    "app": "dlg.apps.bash_shell_app.BashShellApp",
+    "node": "0",
+    "island": "0"
+  },
+  "pg": {
+    "oid": "1_-3_0",
+    "type": "app",
+    "app": "dlg.apps.bash_shell_app.BashShellApp",
+    "rank": [
+      0
+    ],
+    "loop_cxt": null,
+    "tw": 5,
+    "command": "sleep 1",
+    "num_cpus": 1,
+    "iid": "0",
+    "lg_key": -3,
+    "dt": "BashShellApp",
+    "nm": "Scatter",
+    "original": true,
+    "inputs": [
+      "1_-1_0"
+    ],
+    "outputs": [
+      "1_-4_0/0",
+      "1_-4_0/1",
+      "1_-4_0/2",
+      "1_-4_0/3"
+    ],
+    "node": "127.0.0.1",
+    "island": "127.0.0.1",
+    "reprodata": {
+      "rmode": "1"
+    }
+  },
   "pg_rr": {},
-  "pg_rt": {},
+  "pg_rt": {
+    "node": "127.0.0.1",
+    "island": "127.0.0.1"
+  },
   "pg_rp": {},
   "pg_rpl_sci": {},
-  "pg_rpl_comp": {}
+  "pg_rpl_comp": {
+    "node": "127.0.0.1",
+    "island": "127.0.0.1"
+  }
 }

@@ -1,8 +1,9 @@
-import unittest
 import json
+import unittest
+
 from dlg.common.reproducibility.constants import ReproducibilityFlags
 from dlg.common.reproducibility.reproducibility import accumulate_lgt_drop_data, accumulate_lg_drop_data, \
-    accumulate_pgt_unroll_drop_data, accumulate_pgt_partition_drop_data, accumulate_pg_drop_data
+    accumulate_pgt_partition_drop_data, accumulate_pg_drop_data
 
 
 # TODO: Fix variable naming per function
@@ -88,6 +89,7 @@ class TestPGTDropAccumulate(unittest.TestCase):
             drop = json.load(handle)
         lgd, lgt_d_out = load_drop(drop, "pgt")
         for flag, expected in lgt_d_out.items():
+            lgd['reprodata']['rmode'] = str(flag.value)
             actual = accumulate_pgt_partition_drop_data(lgd)
             self.assertEqual(actual, expected)
 
@@ -96,6 +98,7 @@ class TestPGTDropAccumulate(unittest.TestCase):
             drop = json.load(handle)
         lgg, lgt_g_out = load_drop(drop, "pgt")
         for flag, expected in lgt_g_out.items():
+            lgg['reprodata']['rmode'] = str(flag.value)
             actual = accumulate_pgt_partition_drop_data(lgg)
             self.assertEqual(actual, expected)
 
