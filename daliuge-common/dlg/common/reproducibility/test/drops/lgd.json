@@ -91,22 +91,186 @@
     "numOutputPorts": 0,
     "streaming": false
   },
-  "lg": {},
+  "lg": {
+    "canHaveInputs": true,
+    "canHaveOutputs": true,
+    "category": "File",
+    "categoryType": "Data",
+    "collapsed": false,
+    "colour": "#394BB2",
+    "description": "",
+    "drawOrderHint": 0,
+    "exitAppName": "",
+    "fields": [
+      {
+        "name": "data_volume",
+        "text": "Data volume",
+        "value": "5"
+      },
+      {
+        "name": "group_end",
+        "text": "Group end",
+        "value": "0"
+      },
+      {
+        "name": "check_filepath_exists",
+        "text": "Check file path exists",
+        "value": "1"
+      },
+      {
+        "name": "filepath",
+        "text": "File path",
+        "value": "result1.in"
+      },
+      {
+        "name": "dirname",
+        "text": "Directory name",
+        "value": "/home/data"
+      }
+    ],
+    "inputAppFields": [],
+    "inputAppName": "",
+    "inputApplication": "Unknown",
+    "inputLocalPorts": [],
+    "inputPorts": [
+      {
+        "Id": "1i1",
+        "IdText": "event"
+      }
+    ],
+    "isData": true,
+    "isGroup": false,
+    "key": -1,
+    "loc": "538 309",
+    "outputAppFields": [],
+    "outputAppName": "",
+    "outputApplication": "Unknown",
+    "outputLocalPorts": [],
+    "outputPorts": [
+      {
+        "Id": "1o1",
+        "IdText": "event"
+      }
+    ],
+    "streaming": false,
+    "subject": null,
+    "text": "File"
+  },
   "lg_rr": {},
-  "lg_rt": {},
+  "lg_rt": {
+    "data_volume": "5",
+    "filepath": "result1.in",
+    "dirname": "/home/data",
+    "check_filepath_exists": "1"
+  },
   "lg_rp": {},
   "lg_rpl_sci": {},
-  "lg_rpl_comp": {},
-  "pgt": {},
-  "pgt_rr": {},
-  "pgt_rt": {},
-  "pgt_rp": {},
-  "pgt_rpl_sci": {},
-  "pgt_rpl_comp": {},
-  "pg": {},
+  "lg_rpl_comp": {
+    "data_volume": "5",
+    "filepath": "result1.in",
+    "dirname": "/home/data",
+    "check_filepath_exists": "1"
+  },
+  "pgt": {
+    "oid": "1_-1_0",
+    "type": "plain",
+    "storage": "File",
+    "rank": [
+      0
+    ],
+    "loop_cxt": null,
+    "dw": 5,
+    "dirname": "/home/data",
+    "check_filepath_exists": true,
+    "filepath": "result1.in",
+    "iid": "0",
+    "lg_key": -1,
+    "dt": "File",
+    "nm": "File",
+    "producers": [
+      "1_-3_0"
+    ],
+    "consumers": [
+      "1_-4_0"
+    ],
+    "node": "#0",
+    "island": "#0",
+    "reprodata": {
+      "rmode": "1"
+    }
+  },
+  "pgt_rr": {
+    "type": "plain",
+    "rank": [
+      0
+    ],
+    "storage": "File"
+  },
+  "pgt_rt": {
+    "type": "plain",
+    "rank": [
+      0
+    ],
+    "storage": "File"
+  },
+  "pgt_rp": {
+    "type": "plain",
+    "rank": [
+      0
+    ],
+    "storage": "File"
+  },
+  "pgt_rpl_sci": {
+    "type": "plain",
+    "rank": [
+      0
+    ],
+    "storage": "File"
+  },
+  "pgt_rpl_comp": {
+    "type": "plain",
+    "rank": [
+      0
+    ],
+    "storage": "File"
+  },
+  "pg": {
+    "oid": "1_-1_0",
+    "type": "plain",
+    "storage": "File",
+    "rank": [
+      0
+    ],
+    "loop_cxt": null,
+    "dw": 5,
+    "dirname": "/home/data",
+    "check_filepath_exists": true,
+    "filepath": "result1.in",
+    "iid": "0",
+    "lg_key": -1,
+    "dt": "File",
+    "nm": "File",
+    "producers": [
+      "1_-3_0"
+    ],
+    "consumers": [
+      "1_-4_0"
+    ],
+    "node": "127.0.0.1",
+    "island": "127.0.0.1",
+    "reprodata": {
+      "rmode": "1"
+    }
+  },
   "pg_rr": {},
-  "pg_rt": {},
+  "pg_rt": {
+    "node": "127.0.0.1",
+    "island": "127.0.0.1"
+  },
   "pg_rp": {},
   "pg_rpl_sci": {},
-  "pg_rpl_comp": {}
+  "pg_rpl_comp": {
+    "node": "127.0.0.1",
+    "island": "127.0.0.1"
+  }
 }
