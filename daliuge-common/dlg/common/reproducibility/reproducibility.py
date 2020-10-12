@@ -115,8 +115,10 @@ def accumulate_lg_drop_data(drop: dict, level: ReproducibilityFlags):
             elif category == Categories.NULL:
                 pass
         elif category_type == 'Group':
-            data['exitAppName'] = drop['exitAppName']  # TODO: May need significant revising
-            data['inputAppName'] = drop['inputAppName']
+            if 'exitAppName' in drop:
+                data['exitAppName'] = drop['exitAppName']  # TODO: May need significant revising
+            if 'inputAppName' in drop:
+                data['inputAppName'] = drop['inputAppName']
             if category == Categories.GROUP_BY:
                 data['group_key'] = fields['group_key']
                 data['group_axis'] = fields['group_axis']
@@ -511,7 +513,7 @@ def build_blockdag(drops: list, abstraction: str = 'pgt'):
             parenthash = []
             if rmode >= ReproducibilityFlags.REPRODUCE.value:
                 # TODO: Hack! may break later, proceed with caution
-                if dropset[did][0]['reprodata']['lgt_data']['category_type'] == Categories.DATA \
+                if 'lgt_data' in dropset[did][0]['reprodata'] and dropset[did][0]['reprodata']['lgt_data']['category_type'] == Categories.DATA \
                         and (dropset[did][1] == 0 or dropset[did][2] == 0):
                     # Add my new hash to the parent-hash list
                     parenthash.append(dropset[did][0]['reprodata'][blockstr + "_blockhash"])
