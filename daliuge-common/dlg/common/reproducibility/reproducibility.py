@@ -518,8 +518,12 @@ def build_blockdag(drops: list, abstraction: str = 'pgt'):
                 else:
                     # Add my parenthashes to the parent-hash list
                     parenthash.extend(dropset[did][0]['reprodata'][parentstr])
-            if rmode != ReproducibilityFlags.REPRODUCE.value:
+            if rmode != ReproducibilityFlags.REPRODUCE.value and rmode != ReproducibilityFlags.RERUN.value:
                 parenthash.append(dropset[did][0]['reprodata'][blockstr + "_blockhash"])
+            elif rmode == ReproducibilityFlags.RERUN.value:  # Only want to include 'original nodes in the chain
+                if dropset[did][0]['original']:
+                    parenthash.append(dropset[did][0]['reprodata'][blockstr + '_blockhash'])
+
             # Add our new hash to the parest-hash list
             dropset[n][0]['reprodata'][parentstr].extend(parenthash)
             if dropset[n][1] == 0:
@@ -577,6 +581,7 @@ def init_lg_repro_data(lg: dict):
     """
     for drop in lg['nodeDataArray']:
         init_lg_repro_drop_data(drop)
+        drop['original'] = True
     leaves = lg_build_blockdag(lg)
     lg['reprodata']['signature'] = agglomerate_leaves(leaves)
     logger.info("Reproducibility data finished at LG level")

@@ -419,6 +419,7 @@ def convert_construct(lgo):
         app_node["text"] = node["text"]
         app_node["reprodata"] = {"rmode": node["reprodata"]["rmode"],  # Default behaviour to inherit rmode
                                  "lg_blockhash": node["reprodata"]["lg_blockhash"]}
+        app_node["original"] = True  # Logically original (representing an original node in the graph)
         if 'mkn' in node:
             app_node['mkn'] = node['mkn']
 

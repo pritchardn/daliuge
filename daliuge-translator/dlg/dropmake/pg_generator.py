@@ -127,7 +127,6 @@ class LGNode:
         if "isGroup" in jd and jd["isGroup"] is True:
             self._isgrp = True
             for wn in group_q[self.id]:
-                print(wn._reprodata)
                 wn.group = self
                 self.add_child(wn)
             group_q.pop(self.id)  # not thread safe
@@ -830,6 +829,7 @@ class LGNode:
         kwargs["nm"] = self.text
         # Behaviour is that child-nodes inherit reproducibility data from their parents.
         kwargs["reprodata"] = self._reprodata.copy()
+        kwargs["original"] = self.jd["original"]
         dropSpec.update(kwargs)
         return dropSpec
 
@@ -2143,9 +2143,7 @@ class LG:
                     grp_h = [str(x) for x in grp_h]
                     miid += "${0}".format("-".join(grp_h))
 
-                if (
-                        extra_links_drops and not lgn.is_loop()
-                ):  # make GroupBy and Gather drops
+                if extra_links_drops and not lgn.is_loop():  # make GroupBy and Gather drops
                     src_gdrop = lgn.make_single_drop(miid)
                     self._drop_dict[lgn.id].append(src_gdrop)
                     if lgn.is_groupby():
@@ -2154,11 +2152,19 @@ class LG:
                         pass
                         # self._drop_dict['new_added'].append(src_gdrop['gather-data_drop'])
                 for child in lgn.children:
+                    if i == 0:  # HACK: A disgusting yet workable solution (for now)
+                        child.jd['original'] = True
+                    else:
+                        child.jd['original'] = False
                     self.lgn_to_pgn(child, miid, get_child_lp_ctx(i))
         elif lgn.is_mpi():
             for i in range(lgn.dop):
                 miid = "{0}/{1}".format(iid, i)
                 src_drop = lgn.make_single_drop(miid, loop_cxt=lpcxt, proc_index=i)
+                if i == 0:
+                    src_drop['original'] = True
+                else:
+                    src_drop['original'] = False
                 self._drop_dict[lgn.id].append(src_drop)
         else:
             # TODO !!
