@@ -13,6 +13,19 @@ def common_hash(value):  # TODO: check type
     return HASHING_ALG(value).hexdigest()
 
 
+def make_subdrop(drop: dict, direction: str):
+    result = {'categoryType': "Application", 'category': drop[direction + 'ApplicationType'],
+              'streaming': drop['streaming'], 'fields': drop[direction + 'AppFields'].copy()}
+    if direction == 'input':
+        result['inputPorts'] = drop['inputPorts'].copy()
+        result['outputPorts'] = drop['inputLocalPorts'].copy()  # TODO: Check with Andreas on this interpretation
+
+    elif direction == 'output':
+        result['inputPorts'] = drop['outputLocalPorts'].copy()
+        result['outputPorts'] = drop['outputPorts'].copy()
+    return result
+
+
 #  ------ Drop-Based Functionality ------
 def accumulate_lgt_drop_data(drop: dict, level: ReproducibilityFlags):
     """
@@ -102,7 +115,8 @@ def accumulate_lg_drop_data(drop: dict, level: ReproducibilityFlags):
             elif category == Categories.NULL:
                 pass
         elif category_type == 'Group':
-            data['exitAppName'] = drop['exitAppName']
+            data['exitAppName'] = drop['exitAppName']  # TODO: May need significant revising
+            data['inputAppName'] = drop['inputAppName']
             if category == Categories.GROUP_BY:
                 data['group_key'] = fields['group_key']
                 data['group_axis'] = fields['group_axis']
@@ -195,6 +209,21 @@ def init_lgt_repro_drop_data(drop: dict, level: ReproducibilityFlags):
     :return: The same drop with appended reproducibility information.
     """
     data = accumulate_lgt_drop_data(drop, level)
+    if 'inputApplicationType' in drop.keys() and not (drop['inputApplicationType'] == 'None'):
+        # HACK: We can get away with only one level of recursion for now.
+        in_subdrop = make_subdrop(drop, 'input')
+        in_subdrop_data = accumulate_lgt_drop_data(in_subdrop, level)
+        merkletree = MerkleTree(in_subdrop_data.items(), common_hash)
+        if merkletree.merkle_root is not None:
+            data['insub_merkleroot'] = merkletree.merkle_root
+
+    if 'outputApplicationType' in drop.keys() and not (drop['outputApplicationType'] == 'None'):
+        out_subdrop = make_subdrop(drop, 'output')
+        out_subdrop_data = accumulate_lgt_drop_data(out_subdrop, level)
+        merkletree = MerkleTree(out_subdrop_data.items(), common_hash)
+        if merkletree.merkle_root is not None:
+            data['outsub_merkleroot'] = merkletree.merkle_root
+
     merkletree = MerkleTree(data.items(), common_hash)
     data['merkleroot'] = merkletree.merkle_root
     drop['reprodata'] = {'rmode': str(level.value), 'lgt_data': data, 'lg_parenthashes': []}
@@ -208,11 +237,26 @@ def init_lg_repro_drop_data(drop: dict):
     :return: The same drop with appended reproducibility information
     """
     rmode = rflag_caster(drop['reprodata']['rmode'])
+    data = accumulate_lg_drop_data(drop, rmode)
     if not rmode_supported(rmode):
         logger.warning("Requested reproducibility mode %s not yet implemented", str(rmode))
         rmode = REPRO_DEFAULT
         drop['reprodata']['rmode'] = str(rmode.value)
-    data = accumulate_lg_drop_data(drop, rmode)
+    if 'inputApplicationType' in drop.keys() and not (drop['inputApplicationType'] == 'None'):
+        # HACK: We can get away with only one level of recursion for now.
+        in_subdrop = make_subdrop(drop, 'input')
+        in_subdrop_data = accumulate_lg_drop_data(in_subdrop, rmode)
+        merkletree = MerkleTree(in_subdrop_data.items(), common_hash)
+        if merkletree.merkle_root is not None:
+            data['insub_merkleroot'] = merkletree.merkle_root
+
+    if 'outputApplicationType' in drop.keys() and not (drop['outputApplicationType'] == 'None'):
+        out_subdrop = make_subdrop(drop, 'output')
+        out_subdrop_data = accumulate_lg_drop_data(out_subdrop, rmode)
+        merkletree = MerkleTree(out_subdrop_data.items(), common_hash)
+        if merkletree.merkle_root is not None:
+            data['outsub_merkleroot'] = merkletree.merkle_root
+
     merkletree = MerkleTree(data.items(), common_hash)
     data['merkleroot'] = merkletree.merkle_root
     drop['reprodata']['lg_data'] = data
@@ -467,7 +511,7 @@ def build_blockdag(drops: list, abstraction: str = 'pgt'):
             parenthash = []
             if rmode >= ReproducibilityFlags.REPRODUCE.value:
                 # TODO: Hack! may break later, proceed with caution
-                if dropset[did][0]['reprodata']['lgt_data']['category_type'] == Categories.DATA\
+                if dropset[did][0]['reprodata']['lgt_data']['category_type'] == Categories.DATA \
                         and (dropset[did][1] == 0 or dropset[did][2] == 0):
                     # Add my new hash to the parent-hash list
                     parenthash.append(dropset[did][0]['reprodata'][blockstr + "_blockhash"])
