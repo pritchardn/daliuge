@@ -444,10 +444,11 @@ def lg_build_blockdag(lg: dict):
 
     logger.info("BlockDAG Generated at LG/T level")
 
+    leaves_signatures = []
     for i in range(len(leaves)):
         leaf = leaves[i]
-        leaves[i] = dropset[leaf][0]['reprodata']['lg_blockhash']
-    return leaves
+        leaves_signatures.append(dropset[leaf][0]['reprodata']['lg_blockhash'])
+    return leaves_signatures, visited
 
 
 def build_blockdag(drops: list, abstraction: str = 'pgt'):
@@ -584,7 +585,7 @@ def init_lg_repro_data(lg: dict):
     for drop in lg['nodeDataArray']:
         init_lg_repro_drop_data(drop)
         drop['original'] = True
-    leaves = lg_build_blockdag(lg)
+    leaves, visited = lg_build_blockdag(lg)
     lg['reprodata']['signature'] = agglomerate_leaves(leaves)
     logger.info("Reproducibility data finished at LG level")
     return lg
