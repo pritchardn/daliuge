@@ -75,3 +75,7 @@ class TestLGBuildBlockDAG(unittest.TestCase):
         for flag in ReproducibilityFlags:
             sigs, visited = process_graph(lgt, flag)
             self.assertEqual(expected_visited, visited)
+
+
+if __name__ == '__main__':
+    unittest.main()
