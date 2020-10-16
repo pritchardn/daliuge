@@ -416,10 +416,15 @@ def convert_construct(lgo):
         app_node = dict()
         app_node["key"] = node["key"]
         app_node["category"] = node[has_app]  # node['application']
+        app_node["categoryType"] = node['categoryType']
         app_node["text"] = node["text"]
         app_node["reprodata"] = {"rmode": node["reprodata"]["rmode"],  # Default behaviour to inherit rmode
                                  "lg_blockhash": node["reprodata"]["lg_blockhash"]}
         app_node["original"] = True  # Logically original (representing an original node in the graph)
+        app_node['inputPorts'] = node['inputPorts'].copy()
+        app_node['outputPorts'] = node['outputPorts'].copy()
+        app_node['streaming'] = node['streaming']
+        app_node['fields'] = node['fields'].copy()
         if 'mkn' in node:
             app_node['mkn'] = node['mkn']
 
