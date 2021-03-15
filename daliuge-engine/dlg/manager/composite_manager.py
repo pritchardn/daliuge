@@ -419,6 +419,15 @@ class CompositeManager(DROPManager):
         self.replicate(sessionId, self._getSessionStatus, "getting the graph status", collect=allStatus)
         return allStatus
 
+    def _getSessionReproData(self, dm, host, sessionId):
+        return {host: dm.getGraphReproData(sessionId)}
+
+    def getSessionReproData(self, sessionId):
+        allReproStatus = {}
+        self.replicate(sessionId, self._getSessionReprodata, "getting the graph reprodata", collect=allReproStatus)
+        # TODO: Stitch reprodata together, this will be a big job
+        return allReproStatus
+
     def _getGraphSize(self, dm, host, sessionId):
         return dm.getGraphSize(sessionId)
 
